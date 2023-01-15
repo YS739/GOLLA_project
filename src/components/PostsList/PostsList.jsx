@@ -1,3 +1,30 @@
+import {
+  Section,
+  Article,
+  CardBox,
+  CardTitle,
+  ResultBox,
+  CategoryBox,
+  CategoryA,
+  ContentA,
+  CategoryB,
+  ContentB,
+  GageBar,
+  CardFooterBox,
+  CardIcons,
+  LikesIcon,
+  LikesCount,
+  ViewIcon,
+  ViewCount,
+  PercentA,
+  PercentB,
+} from './style';
+import { BsFillCircleFill } from 'react-icons/bs';
+import { BsFillSuitHeartFill } from 'react-icons/bs';
+import { IoEyeSharp } from 'react-icons/io5';
+
+import { useNavigate } from 'react-router-dom';
+
 const PostsList = () => {
   const navigate = useNavigate();
   return (

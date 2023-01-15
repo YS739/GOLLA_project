@@ -1,65 +1,54 @@
-import BackButton from '../../components/Common/BackButton';
-import styled from 'styled-components';
+import {
+  Section,
+  Article,
+  PostForm,
+  WritingBox,
+  PostTitleBox,
+  PostTitle,
+  TitleInput,
+  PostContentBox,
+  PostContent,
+  ContentInput,
+  CategoryBox,
+  ABox,
+  CategoryA,
+  BBox,
+  CategoryB,
+  AddBtn,
+} from './style';
 
 const UploadPage = () => {
   return (
-    <div>
-      뒤로가기
-      <BackButton />
-      <PostSection>
-        <PostArticle>
-          <box>
-            <div>
-              주제
+    <Section>
+      <Article>
+        <PostForm>
+          <WritingBox>
+            <PostTitleBox>
+              <PostTitle>제목</PostTitle>
+              <TitleInput />
+            </PostTitleBox>
+            <PostContentBox>
+              <PostContent>내용</PostContent>
+              <ContentInput />
+            </PostContentBox>
+          </WritingBox>
+          <CategoryBox>
+            <ABox>
+              <CategoryA color={'#EC5858'}>A</CategoryA>
               <input />
-            </div>
-            <div>
-              내용
+            </ABox>
+            <BBox>
+              <CategoryB color={'#3E6D9C'}>B</CategoryB>
               <input />
-            </div>
-          </box>
-
-          <box>
-            선택분류
-            <div>
-              A <input />
-            </div>
-            <div>
-              B <input />
-            </div>
-          </box>
-          <button>등록</button>
-        </PostArticle>
-      </PostSection>
-    </div>
+            </BBox>
+          </CategoryBox>
+          <div style={{ width: '100%' }}>
+            <AddBtn>등록</AddBtn>
+          </div>
+        </PostForm>
+      </Article>
+    </Section>
   );
 };
 
 export default UploadPage;
-
-// styled component
-export const PostSection = styled.section`
-  width: 600px;
-  height: 500px;
-  background-color: #f4efec;
-  /* FIXME: Beige import 했는데 왜 사용이 안 됐다고 나오지?
-  이유를 알았음... react native에서는 colors로 선언한 게 문자열이고 style에
-  색이 문자열로 들어가서 가능한건데 styled component에서는 색을 나타낼 때
-  문자열을 안 씀..! */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px 2px gray;
-`;
-
-export const PostArticle = styled.article`
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: inherit;
-`;
