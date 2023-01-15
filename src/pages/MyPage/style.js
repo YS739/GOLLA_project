@@ -1,10 +1,25 @@
 import styled from 'styled-components';
 
-const Section = styled.section`
-  border: 1px solid blue;
-  padding: 10px;
-  justify-content: center;
-  width: 80%;
+const Section = styled.div`
+  width: 85%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export { Section };
+const Div = styled.div`
+  width: 100%;
+`;
+
+const Btn = styled.button`
+  all: unset;
+  font-size: 25px;
+  font-weight: 700;
+  padding-right: 15px;
+  :hover {
+    border-bottom: 3px solid black;
+  }
+`;
+
+export { Section, Div, Btn };

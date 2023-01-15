@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import ReactModal from 'react-modal';
 
 const queryClient = new QueryClient();
 
+ReactModal.setAppElement('#root');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <QueryClientProvider client={queryClient}>

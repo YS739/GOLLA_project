@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainPage from "../pages/MainPage";
-import DetailPage from "../pages/DetailPage";
-import EditPage from "../pages/EditPage";
-import UploadPage from "../pages/UploadPage";
-import MyPage from "../pages/MyPage";
-import Layout from "./Layout/Layout";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainPage from '../pages/MainPage';
+import DetailPage from '../pages/DetailPage';
+import EditPage from '../pages/EditPage';
+import UploadPage from '../pages/UploadPage';
+import MyPage from '../pages/MyPage';
+import Layout from './Layout/Layout';
 
 const Router = () => {
   return (

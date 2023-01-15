@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const Article = styled.article`
-  border: 5px solid rebeccapurple;
+  border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 10px;
   font-size: 20px;
+  width: 100%;
+  max-width: 900px;
 `;
 
 const CardBox = styled.div`
@@ -12,8 +13,9 @@ const CardBox = styled.div`
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 95%;
   height: 100px;
+  margin: 10px;
 `;
 
 const CardName = styled.div`
