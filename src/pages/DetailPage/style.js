@@ -16,3 +16,30 @@ export const Post = styled.article`
   padding: 20px;
   box-sizing: border-box;
 `
+
+export const PostEditDeleteBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`
+
+export const Btn = styled.div`
+  cursor: pointer;
+  padding: 10px 12px;
+`
+
+export const PrevNextPost = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+`
+
+export const BtnBox = styled.div`
+  display: flex;
+  cursor: pointer;
+`
+
+export const PrevNextBtn = styled.div`
+
+`

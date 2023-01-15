@@ -24,6 +24,9 @@ export const Category = styled.div`
     font-size: 16px;
     display: flex;
     align-items: center;
+    label {
+        margin-left: 5px;
+    }
 `
 
 export const AddCommentBox = styled.div`
