@@ -1,14 +1,13 @@
-import styled from "styled-components";
-import Header from "./Header/Header";
+import styled from 'styled-components';
+import Header from './Header/Header';
 
 const Layout = ({ children }) => {
   return (
     <Wrap>
-      <Header>
-        <div>{children}</div>
-      </Header>
+      <Header />
+      <div>{children}</div>
     </Wrap>
-  )
+  );
 };
 
 export default Layout;
