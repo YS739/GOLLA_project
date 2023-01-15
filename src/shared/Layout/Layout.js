@@ -1,5 +1,21 @@
+import styled from "styled-components";
+import Header from "./Header/Header";
+
 const Layout = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <Wrap>
+      <Header>
+        <div>{children}</div>
+      </Header>
+    </Wrap>
+  )
 };
 
 export default Layout;
+
+// styled-components
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
