@@ -9,8 +9,14 @@ const UploadPage = () => {
       <PostSection>
         <PostArticle>
           <box>
-            토론주제
-            <input />
+            <div>
+              주제
+              <input />
+            </div>
+            <div>
+              내용
+              <input />
+            </div>
           </box>
 
           <box>
