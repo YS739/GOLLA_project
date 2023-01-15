@@ -37,6 +37,7 @@ export const CardTitle = styled.div`
   margin-bottom: 30px;
 `;
 
+// white box - Category, GageBar
 export const ResultBox = styled.div`
   width: 90%;
   height: 45%;
@@ -74,6 +75,21 @@ export const ContentB = styled(ContentA)``;
 export const GageBar = styled.div`
   width: 80%;
   height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const PercentA = styled.div`
+  width: 40%;
+  background-color: #ec5858;
+  display: flex;
+  justify-content: center;
+`;
+
+export const PercentB = styled(PercentA)`
+  width: 60%;
   background-color: #3e6d9c;
 `;
 

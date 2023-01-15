@@ -16,6 +16,8 @@ import {
   LikesCount,
   ViewIcon,
   ViewCount,
+  PercentA,
+  PercentB,
 } from './style';
 import { BsFillCircleFill } from 'react-icons/bs';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
@@ -54,7 +56,10 @@ const PostsList = () => {
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
             </CategoryBox>
-            <GageBar>게이지바</GageBar>
+            <GageBar>
+              <PercentA>40%</PercentA>
+              <PercentB>60%</PercentB>
+            </GageBar>
           </ResultBox>
         </CardBox>
         <CardFooterBox>
@@ -89,16 +94,19 @@ const PostsList = () => {
             <CategoryBox>
               <CategoryA>
                 <BsFillCircleFill color="#EC5858" />
-                <ContentA>삼성</ContentA>
+                <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
                 <BsFillCircleFill color="#3E6D9C" />
-                <ContentB>LG</ContentB>
+                <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
             </CategoryBox>
-            <GageBar>게이지바</GageBar>
+            <GageBar>
+              <PercentA>40%</PercentA>
+              <PercentB>60%</PercentB>
+            </GageBar>
           </ResultBox>
         </CardBox>
         <CardFooterBox>
@@ -133,16 +141,19 @@ const PostsList = () => {
             <CategoryBox>
               <CategoryA>
                 <BsFillCircleFill color="#EC5858" />
-                <ContentA>삼성</ContentA>
+                <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
                 <BsFillCircleFill color="#3E6D9C" />
-                <ContentB>LG</ContentB>
+                <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
             </CategoryBox>
-            <GageBar>게이지바</GageBar>
+            <GageBar>
+              <PercentA>40%</PercentA>
+              <PercentB>60%</PercentB>
+            </GageBar>
           </ResultBox>
         </CardBox>
         <CardFooterBox>

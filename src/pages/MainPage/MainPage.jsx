@@ -2,20 +2,21 @@ import PostsList from '../../components/PostsList/PostsList';
 import styled from 'styled-components';
 import { BsFillClockFill } from 'react-icons/bs';
 import { BsGraphUp } from 'react-icons/bs';
+import { useState } from 'react';
 
 const MainPage = () => {
   return (
     <Section>
       <MainNav>
         <Categories>
-          <div>
+          <NewCategory>
             <BsFillClockFill />
-            최신순
-          </div>
-          <div>
+            <NewPostsBtn>최신순</NewPostsBtn>
+          </NewCategory>
+          <PopularCategory>
             <BsGraphUp />
-            인기순
-          </div>
+            <PopularPostsBtn>인기순</PopularPostsBtn>
+          </PopularCategory>
         </Categories>
       </MainNav>
       <PostsList />
@@ -25,7 +26,6 @@ const MainPage = () => {
 
 export default MainPage;
 
-// styled component
 export const Section = styled.div`
   width: 85%;
   max-width: 1100px;
@@ -42,7 +42,29 @@ export const MainNav = styled.div`
   margin-bottom: 10px;
 `;
 export const Categories = styled.div`
-  width: 150px;
+  width: 170px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
+
+export const NewCategory = styled.div`
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+  //TODO: 클릭했을 때 black or gray
+  :hover,
+  :active,
+  :focus {
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+  }
+`;
+
+export const NewPostsBtn = styled.div`
+  font-weight: bold;
+`;
+export const PopularCategory = styled(NewCategory)``;
+
+export const PopularPostsBtn = styled(NewPostsBtn)``;
