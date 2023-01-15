@@ -1,7 +1,9 @@
 import React from "react";
 
 const GetComments = () => {
-  return;
+  return (
+    <div>dd</div>
+  )
 };
 
 export default GetComments;
