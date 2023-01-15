@@ -7,6 +7,7 @@ export const StyledHeader = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    background-color: white;
 `
 
 export const HeaderContainer = styled.div`
