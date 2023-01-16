@@ -6,6 +6,7 @@ import {
   HeaderBtnBox,
   HeaderBtn,
 } from './style';
+
 import LoginModal from '../LoginModal';
 import { useState } from 'react';
 
@@ -16,6 +17,7 @@ const Header = () => {
   const openModal = () => {
     setIsOpen(true);
   };
+
 
   return (
     <StyledHeader>
