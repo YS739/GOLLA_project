@@ -12,6 +12,7 @@ import {
 } from './style';
 
 const MainPage = () => {
+  // TODO:
   return (
     <Section>
       <MainNav>

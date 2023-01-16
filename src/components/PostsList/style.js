@@ -31,10 +31,13 @@ export const CardBox = styled.div`
 `;
 
 export const CardTitle = styled.div`
+  width: 300px;
+  height: 40px;
   font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 30px;
+  text-align: center;
 `;
 
 // white box - Category, GageBar
@@ -75,7 +78,7 @@ export const ContentB = styled(ContentA)``;
 // GageBar
 export const GageBar = styled.div`
   width: 80%;
-  height: 20px;
+  height: 23px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -85,9 +88,12 @@ export const GageBar = styled.div`
 
 export const PercentA = styled.div`
   width: 40%;
+  height: 100%;
   background-color: #ec5858;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding-top: 2px;
 `;
 
 export const PercentB = styled(PercentA)`

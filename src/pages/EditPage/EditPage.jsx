@@ -8,7 +8,7 @@ import {
   TitleInput,
   PostContentBox,
   PostContent,
-  ContentInput,
+  ContentTextarea,
   CategoryBox,
   ABox,
   CategoryA,
@@ -29,7 +29,7 @@ const EditPage = () => {
             </PostTitleBox>
             <PostContentBox>
               <PostContent>내용</PostContent>
-              <ContentInput />
+              <ContentTextarea />
             </PostContentBox>
           </WritingBox>
           <CategoryBox>

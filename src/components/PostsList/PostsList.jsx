@@ -36,8 +36,10 @@ const PostsList = () => {
         }}
       >
         <CardBox>
-          <CardTitle>노트북 살 건데 골라주라</CardTitle>
-          {/* TODO: data 가져와서 말 줄임표 추가하기
+          <CardTitle>
+            노트북 살 건데 골라주라 노트북 살 건데 골라주라 노트북 살 건데 골라
+          </CardTitle>
+          {/* TODO: data 가져와서 말 줄임표 추가하기 - 두 줄이 되게
           <div>
             {post.title.length < 20 
               ? post.title
