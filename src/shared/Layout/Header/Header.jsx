@@ -1,12 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import {
-  StyledHeader,
-  HeaderContainer,
-  Logo,
-  HeaderBtnBox,
-  HeaderBtn,
-} from './style';
-
+import { useNavigate } from "react-router-dom";
+import { StyledHeader, HeaderContainer, Logo, HeaderBtnBox, HeaderBtn } from "./style";
 import LoginModal from '../LoginModal';
 import { useState } from 'react';
 
