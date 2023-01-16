@@ -7,8 +7,17 @@ import {
   HeaderBtn,
 } from './style';
 
+import LoginModal from '../LoginModal';
+import { useState } from 'react';
+
 const Header = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
 
   return (
     <StyledHeader>
@@ -19,8 +28,9 @@ const Header = () => {
         />
         <HeaderBtnBox>
           <HeaderBtn onClick={() => navigate('/upload')}>POST</HeaderBtn>
-          <HeaderBtn>LOGIN</HeaderBtn>
+          <HeaderBtn onClick={openModal}>LOGIN</HeaderBtn>
         </HeaderBtnBox>
+        <LoginModal isOpen={isOpen} setIsOpen={setIsOpen}></LoginModal>
       </HeaderContainer>
     </StyledHeader>
   );
