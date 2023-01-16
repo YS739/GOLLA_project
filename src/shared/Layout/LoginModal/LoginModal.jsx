@@ -81,10 +81,10 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
                 src={require('../../../assets/Logo.png')}
                 style={{ height: 50, marginRight: -20 }}
               />
-              에 처음 오셨군요!
+              에서 활동할
             </GuideBox>
             <GuideBox style={{ marginTop: -120 }}>
-              닉네임을 설정해 볼까요?
+              닉네임을 정해주세요.
             </GuideBox>
             <InputBox>
               <InputTitle>닉네임</InputTitle>
@@ -116,13 +116,13 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               </Btn>
             </ModalDiv>
 
-            <GuideBox>축하드려요! 가입되었습니다.</GuideBox>
+            <GuideBox>가입이 완료 되었습니다.</GuideBox>
             <GuideBox style={{ marginTop: -100 }}>
               <img
                 src={require('../../../assets/Logo.png')}
                 style={{ height: 60, marginRight: -30 }}
               />
-              가 당신의 고민을 해결해드릴게요.
+              가 당신의 고민을 해결해드릴게요!
             </GuideBox>
 
             <div style={{ textAlign: 'center' }}>
