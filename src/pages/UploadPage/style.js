@@ -54,6 +54,11 @@ export const TitleInput = styled.input`
   height: 40px;
   border-radius: 15px;
   border: none;
+  font-size: 16px;
+
+  :focus-visible {
+    border: none;
+  }
 `;
 
 // Content
@@ -74,16 +79,18 @@ export const CategoryBox = styled.div`
   width: 90%;
   height: 35%;
   margin-top: 10px;
+  margin-left: 55px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 
   input {
-    width: 360px;
+    width: 400px;
     height: 45px;
     border-radius: 15px;
     border: none;
+    font-size: 16px;
   }
 `;
 
@@ -105,7 +112,10 @@ export const CategoryA = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3px 0;
+
+  padding-top: 4px;
+  padding-bottom: 1px;
+
   margin-right: 10px;
   text-align: center;
 `;
@@ -127,4 +137,10 @@ export const AddBtn = styled.button`
   font-weight: bold;
 
   cursor: pointer;
+
+  :hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+  }
 `;
