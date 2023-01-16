@@ -45,9 +45,10 @@ export const CommentInput = styled.input`
 export const AddBtn = styled.button`
     width: 15%;
     height: 45px;
-    background-color: black;
+    background-color: #495057;
     color: white;
     font-size: 14px;
+    font-weight: 700;
     border: transparent;
     border-radius: 10px;
     cursor: pointer;

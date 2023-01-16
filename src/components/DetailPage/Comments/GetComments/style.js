@@ -22,6 +22,7 @@ export const CommentBox = styled.div`
     box-sizing: border-box;
     margin-bottom: 10px;
     position: relative;
+    border-bottom: 1px solid gray;
 `
 
 export const ToggleBtn = styled.div`
@@ -49,6 +50,10 @@ export const CateIcon = styled.div`
     align-items: center;
     font-size: 20px;
     font-weight: 700;
+    p {
+        padding-top: 2px;
+        padding-left: 1px;
+    }
 `
 export const CommentDatail = styled.div`
 
