@@ -4,7 +4,7 @@ import Header from './Header/Header';
 const Layout = ({ children }) => {
   return (
     <Wrap>
-      <Header></Header>
+      <Header />
       <Container>{children}</Container>
     </Wrap>
   );

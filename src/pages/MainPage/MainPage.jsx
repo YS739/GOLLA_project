@@ -1,11 +1,34 @@
-import PostsList from "../../components/PostsList/PostsList";
+import PostsList from '../../components/PostsList/PostsList';
+import { BsFillClockFill } from 'react-icons/bs';
+import { BsGraphUp } from 'react-icons/bs';
+import {
+  Section,
+  MainNav,
+  Categories,
+  NewCategory,
+  NewPostsBtn,
+  PopularCategory,
+  PopularPostsBtn,
+} from './style';
 
 const MainPage = () => {
+  // TODO:
   return (
-    <>
-      MainPage
+    <Section>
+      <MainNav>
+        <Categories>
+          <NewCategory>
+            <BsFillClockFill />
+            <NewPostsBtn>최신순</NewPostsBtn>
+          </NewCategory>
+          <PopularCategory>
+            <BsGraphUp />
+            <PopularPostsBtn>인기순</PopularPostsBtn>
+          </PopularCategory>
+        </Categories>
+      </MainNav>
       <PostsList />
-    </>
+    </Section>
   );
 };
 
