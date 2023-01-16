@@ -9,7 +9,7 @@ export const Section = styled.div`
 
 export const Article = styled.div`
   width: 100%;
-  height: 500px;
+  height: 450px;
   background-color: #f4efec;
   display: flex;
   justify-content: center;
@@ -45,7 +45,7 @@ export const PostTitleBox = styled.div`
 `;
 
 export const PostTitle = styled.div`
-  margin-right: 10px;
+  margin-right: 40px;
   font-size: 24px;
 `;
 
@@ -55,10 +55,6 @@ export const TitleInput = styled.input`
   border-radius: 15px;
   border: none;
   font-size: 16px;
-
-  :focus-visible {
-    border: none;
-  }
 `;
 
 // Content
@@ -67,7 +63,7 @@ export const PostContentBox = styled(PostTitleBox)``;
 export const PostContent = styled(PostTitle)``;
 
 export const ContentInput = styled(TitleInput)`
-  height: 150px;
+  height: 130px;
   display: flex;
   align-items: top;
   white-space: pre-line;
@@ -79,14 +75,14 @@ export const CategoryBox = styled.div`
   width: 90%;
   height: 35%;
   margin-top: 10px;
-  margin-left: 55px;
+  margin-right: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 
   input {
-    width: 400px;
+    width: 500px;
     height: 45px;
     border-radius: 15px;
     border: none;

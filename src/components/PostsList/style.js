@@ -59,6 +59,7 @@ export const CategoryBox = styled.div`
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  margin-top: 5px;
 `;
 
 export const CategoryA = styled.div`
@@ -74,11 +75,12 @@ export const ContentB = styled(ContentA)``;
 // GageBar
 export const GageBar = styled.div`
   width: 80%;
-  height: 30px;
+  height: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: white;
 `;
 
 export const PercentA = styled.div`
