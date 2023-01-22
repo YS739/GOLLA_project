@@ -49,12 +49,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color={colors.red} />
+                <BsFillCircleFill color={colors.RED} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color={colors.blue} />
+                <BsFillCircleFill color={colors.BLUE} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
@@ -96,12 +96,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color={colors.red} />
+                <BsFillCircleFill color={colors.RED} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color={colors.blue} />
+                <BsFillCircleFill color={colors.BLUE} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
@@ -143,12 +143,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color={colors.red} />
+                <BsFillCircleFill color={colors.RED} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color={colors.blue} />
+                <BsFillCircleFill color={colors.BLUE} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>

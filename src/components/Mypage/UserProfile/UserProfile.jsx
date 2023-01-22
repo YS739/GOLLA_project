@@ -18,7 +18,7 @@ const UserProfile = () => {
       <Article>
         <TitleBox>
           <Title>
-            <a style={{ color: colors.blue }}>심바아빠</a>님의 프로필
+            <a style={{ color: colors.BLUE }}>심바아빠</a>님의 프로필
           </Title>
           <div>
             <TitleBtn>로그아웃</TitleBtn>

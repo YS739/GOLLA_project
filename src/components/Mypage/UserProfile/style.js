@@ -53,9 +53,9 @@ const CardContent = styled.div`
 `;
 const CardBtn = styled.button`
   color: white;
-  background-color: ${colors.blue};
+  background-color: ${colors.BLUE};
   font-size: 20px;
-  border: 1px solid ${colors.blue};
+  border: 1px solid ${colors.BLUE};
   border-radius: 5px;
 
   cursor: pointer;

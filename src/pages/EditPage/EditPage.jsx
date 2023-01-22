@@ -35,11 +35,11 @@ const EditPage = () => {
           </WritingBox>
           <CategoryBox>
             <ABox>
-              <CategoryA color={colors.red}>A</CategoryA>
+              <CategoryA color={colors.RED}>A</CategoryA>
               <input />
             </ABox>
             <BBox>
-              <CategoryB color={colors.blue}>B</CategoryB>
+              <CategoryB color={colors.BLUE}>B</CategoryB>
               <input />
             </BBox>
           </CategoryBox>
