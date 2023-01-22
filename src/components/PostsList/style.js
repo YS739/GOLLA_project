@@ -24,7 +24,7 @@ export const Article = styled.div`
 export const CardBox = styled.div`
   width: 100%;
   height: 85%;
-  background-color: ${colors.beige};
+  background-color: ${colors.BEIGE};
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   display: flex;
@@ -92,7 +92,7 @@ export const GageBar = styled.div`
 export const PercentA = styled.div`
   width: 40%;
   height: 100%;
-  background-color: ${colors.red};
+  background-color: ${colors.RED};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@ export const PercentA = styled.div`
 
 export const PercentB = styled(PercentA)`
   width: 60%;
-  background-color: ${colors.blue};
+  background-color: ${colors.BLUE};
 `;
 
 // Card Bottom box(user, icons)

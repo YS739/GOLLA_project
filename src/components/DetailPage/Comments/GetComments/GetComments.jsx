@@ -24,7 +24,7 @@ const GetComments = () => {
       <CommentCount>댓글 3</CommentCount>
       <CommentBox>
         <IconBox>
-          <CateIcon color={colors.red}>
+          <CateIcon color={colors.RED}>
             <p>A</p>
           </CateIcon>
         </IconBox>
@@ -46,7 +46,7 @@ const GetComments = () => {
       </CommentBox>
       <CommentBox>
         <IconBox>
-          <CateIcon color={colors.blue}>
+          <CateIcon color={colors.BLUE}>
             <p>B</p>
           </CateIcon>
         </IconBox>

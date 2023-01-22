@@ -13,11 +13,11 @@ const AddComment = () => {
   return (
     <Article>
       <CategoryBox>
-        <Category color={colors.red}>
+        <Category color={colors.RED}>
           <input type="radio" name="category" id="A" value="true" />
           <label htmlFor="A"> A: 짜장면을 먹을까요</label>
         </Category>
-        <Category color={colors.blue}>
+        <Category color={colors.BLUE}>
           <input type="radio" name="category" id="B" value="false" />
           <label htmlFor="B"> B: 짬뽕을 먹을까요</label>
         </Category>

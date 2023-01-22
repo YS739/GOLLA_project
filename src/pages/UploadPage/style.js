@@ -11,7 +11,7 @@ export const Section = styled.div`
 export const Article = styled.div`
   width: 100%;
   height: 450px;
-  background-color: ${colors.beige};
+  background-color: ${colors.BEIGE};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,7 +174,7 @@ export const AddBtn = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: ${colors.grey};
+    background-color: ${colors.GREY};
     color: black;
     transition: 1s;
   }

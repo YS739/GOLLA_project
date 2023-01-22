@@ -88,7 +88,7 @@ export const CompleteBtn = styled.button`
   width: 120px;
   height: 50px;
   font-size: 22px;
-  background-color: ${colors.blue};
+  background-color: ${colors.BLUE};
   color: white;
   border: none;
   padding: 10;
