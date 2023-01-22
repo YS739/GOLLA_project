@@ -1,4 +1,4 @@
 const TopButton = () => {
-  return <></>;
+  return;
 };
 export default TopButton;

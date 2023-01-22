@@ -1,7 +1,8 @@
-import styled from 'styled-components';
 import Header from './Header/Header';
+import React from 'react';
+import styled from 'styled-components';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   return (
     <Wrap>
       <Header />

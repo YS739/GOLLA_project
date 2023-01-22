@@ -3,6 +3,7 @@ import UserLikes from '../../components/Mypage/UserLikes';
 import UserPosts from '../../components/Mypage/UserPosts';
 import BackButton from '../../components/Common/BackButton';
 import { Section, Div, Btn } from './style';
+import React from 'react';
 
 const MyPage = () => {
   return (

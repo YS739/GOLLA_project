@@ -10,6 +10,7 @@ import {
   PopularCategory,
   PopularPostsBtn,
 } from './style';
+import React from 'react';
 
 const MainPage = () => {
   // TODO:

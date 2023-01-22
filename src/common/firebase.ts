@@ -2,7 +2,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
-import { getFireStore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
+import { FB_KEY } from './fbKey';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,7 +11,7 @@ import { getFireStore } from 'firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: null,
+  apiKey: FB_KEY,
   authDomain: 'golla-8cfff.firebaseapp.com',
   projectId: 'golla-8cfff',
   storageBucket: 'golla-8cfff.appspot.com',
@@ -23,4 +24,4 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const authService = getAuth(app);
-export const db = getFireStore(app);
+export const db = getFirestore(app);

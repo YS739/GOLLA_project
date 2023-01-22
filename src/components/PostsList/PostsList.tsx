@@ -23,8 +23,8 @@ import { BsFillCircleFill } from 'react-icons/bs';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
 import { IoEyeSharp } from 'react-icons/io5';
 import { colors } from '../../common/color';
-
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 const PostsList = () => {
   const navigate = useNavigate();
