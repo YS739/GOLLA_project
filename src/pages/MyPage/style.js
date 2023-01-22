@@ -20,6 +20,7 @@ const Btn = styled.button`
   :hover {
     border-bottom: 3px solid black;
   }
+  cursor: pointer;
 `;
 
 export { Section, Div, Btn };

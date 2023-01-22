@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../../../../common/color';
 import {
   Article,
   CategoryBox,
@@ -12,11 +13,11 @@ const AddComment = () => {
   return (
     <Article>
       <CategoryBox>
-        <Category color={'#EC5858'}>
+        <Category color={colors.red}>
           <input type="radio" name="category" id="A" value="true" />
           <label htmlFor="A"> A: 짜장면을 먹을까요</label>
         </Category>
-        <Category color={'#3E6D9C'}>
+        <Category color={colors.blue}>
           <input type="radio" name="category" id="B" value="false" />
           <label htmlFor="B"> B: 짬뽕을 먹을까요</label>
         </Category>

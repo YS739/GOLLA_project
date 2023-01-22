@@ -1,3 +1,4 @@
+import { colors } from '../../common/color';
 import {
   Section,
   Article,
@@ -34,11 +35,11 @@ const UploadPage = () => {
           </WritingBox>
           <CategoryBox>
             <ABox>
-              <CategoryA color={'#EC5858'}>A</CategoryA>
+              <CategoryA color={colors.red}>A</CategoryA>
               <input />
             </ABox>
             <BBox>
-              <CategoryB color={'#3E6D9C'}>B</CategoryB>
+              <CategoryB color={colors.blue}>B</CategoryB>
               <input />
             </BBox>
           </CategoryBox>
