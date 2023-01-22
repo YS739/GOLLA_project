@@ -28,3 +28,4 @@ yarn.lock
 # firebase key값 넣었을 땐 아래 주석을 해제하고 push해주세요.
 src/common/firebase.js
 
+src/common/fbKey.js
