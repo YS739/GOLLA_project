@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../../../common/color';
 import {
   Article,
   TitleBtn,
@@ -17,7 +18,7 @@ const UserProfile = () => {
       <Article>
         <TitleBox>
           <Title>
-            <a style={{ color: '#3E6D9C' }}>심바아빠</a>님의 프로필
+            <a style={{ color: colors.blue }}>심바아빠</a>님의 프로필
           </Title>
           <div>
             <TitleBtn>로그아웃</TitleBtn>

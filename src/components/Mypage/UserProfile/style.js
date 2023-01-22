@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../common/color';
 
 const Article = styled.article`
   border-radius: 5px;
@@ -50,9 +51,9 @@ const CardContent = styled.div`
 `;
 const CardBtn = styled.button`
   color: white;
-  background-color: #3e6d9c;
+  background-color: ${colors.blue};
   font-size: 20px;
-  border: 1px solid #3e6d9c;
+  border: 1px solid ${colors.blue};
   border-radius: 5px;
 `;
 

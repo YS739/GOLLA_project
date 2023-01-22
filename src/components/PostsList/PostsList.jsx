@@ -22,6 +22,7 @@ import {
 import { BsFillCircleFill } from 'react-icons/bs';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
 import { IoEyeSharp } from 'react-icons/io5';
+import { colors } from '../../common/color';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -48,12 +49,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color="#EC5858" />
+                <BsFillCircleFill color={colors.red} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color="#3E6D9C" />
+                <BsFillCircleFill color={colors.blue} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
@@ -95,12 +96,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color="#EC5858" />
+                <BsFillCircleFill color={colors.red} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color="#3E6D9C" />
+                <BsFillCircleFill color={colors.blue} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>
@@ -142,12 +143,12 @@ const PostsList = () => {
           <ResultBox>
             <CategoryBox>
               <CategoryA>
-                <BsFillCircleFill color="#EC5858" />
+                <BsFillCircleFill color={colors.red} />
                 <ContentA>삼성 삼성 삼성 노트북</ContentA>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryA>
               <CategoryB>
-                <BsFillCircleFill color="#3E6D9C" />
+                <BsFillCircleFill color={colors.blue} />
                 <ContentB>LG 그램 DFEFAGD-FD</ContentB>
                 {/* TODO: data 가져와서 말 줄임표 추가하기 */}
               </CategoryB>

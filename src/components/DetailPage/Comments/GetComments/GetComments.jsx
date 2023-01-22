@@ -1,10 +1,22 @@
-import React, { useState } from "react";
-import { Article, CommentCount, CommentBox, ToggleBtn,IconBox, CateIcon, CommentDatail, NameDateBox, Name, Date, Content } from "./style"
+import React, { useState } from 'react';
+import {
+  Article,
+  CommentCount,
+  CommentBox,
+  ToggleBtn,
+  IconBox,
+  CateIcon,
+  CommentDatail,
+  NameDateBox,
+  Name,
+  Date,
+  Content,
+} from './style';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import EditDeleteComment from "../EditDeleteComment";
+import EditDeleteComment from '../EditDeleteComment';
+import { colors } from '../../../../common/color';
 
 const GetComments = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -12,14 +24,20 @@ const GetComments = () => {
       <CommentCount>댓글 3</CommentCount>
       <CommentBox>
         <IconBox>
-          <CateIcon color={"#EC5858"}><p>A</p></CateIcon>
+          <CateIcon color={colors.red}>
+            <p>A</p>
+          </CateIcon>
         </IconBox>
         <CommentDatail>
           <NameDateBox>
             <Name>닉네임</Name>
             <Date> 2023.01.19 19:23</Date>
           </NameDateBox>
-          <Content>댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.</Content>
+          <Content>
+            댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
+            댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
+            댓글 내용입니다. 댓글 내용입니다.
+          </Content>
         </CommentDatail>
         <ToggleBtn onClick={() => setIsOpen(!isOpen)}>
           <BsThreeDotsVertical size="22" />
@@ -28,14 +46,20 @@ const GetComments = () => {
       </CommentBox>
       <CommentBox>
         <IconBox>
-          <CateIcon color={"#3E6D9C"}><p>B</p></CateIcon>
+          <CateIcon color={colors.blue}>
+            <p>B</p>
+          </CateIcon>
         </IconBox>
         <CommentDatail>
           <NameDateBox>
             <Name>닉네임</Name>
             <Date> 2023.01.19 19:23</Date>
           </NameDateBox>
-          <Content>댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.</Content>
+          <Content>
+            댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
+            댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
+            댓글 내용입니다. 댓글 내용입니다.
+          </Content>
         </CommentDatail>
         <ToggleBtn onClick={() => setIsOpen(!isOpen)}>
           <BsThreeDotsVertical size="22" />
@@ -43,7 +67,7 @@ const GetComments = () => {
         {isOpen && <EditDeleteComment />}
       </CommentBox>
     </Article>
-  )
+  );
 };
 
 export default GetComments;

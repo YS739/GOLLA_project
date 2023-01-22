@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../common/color';
 
 export const Section = styled.div`
   width: 85%;
@@ -10,7 +11,7 @@ export const Section = styled.div`
 export const Article = styled.div`
   width: 100%;
   height: 450px;
-  background-color: #f4efec;
+  background-color: ${colors.beige};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +174,7 @@ export const AddBtn = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: #f6f6f6;
+    background-color: ${colors.grey};
     color: black;
     transition: 1s;
   }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../common/color';
 
 export const Btn = styled.button`
   all: unset;
@@ -87,7 +88,7 @@ export const CompleteBtn = styled.button`
   width: 120px;
   height: 50px;
   font-size: 22px;
-  background-color: #3e6d9c;
+  background-color: ${colors.blue};
   color: white;
   border: none;
   padding: 10;

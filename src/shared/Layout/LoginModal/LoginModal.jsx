@@ -17,6 +17,7 @@ import {
 
 import { IoCloseSharp } from 'react-icons/io5';
 import { IoIosArrowBack } from 'react-icons/io';
+import { colors } from '../../../common/color';
 
 const LoginModal = ({ isOpen, setIsOpen }) => {
   const [dp, setDp] = useState(0);
@@ -131,7 +132,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
             <div style={{ textAlign: 'center' }}>
               <CompleteBtn
                 onClick={closeModal}
-                style={{ backgroundColor: '#EC5858' }}
+                style={{ backgroundColor: colors.red }}
               >
                 시작하기
               </CompleteBtn>
