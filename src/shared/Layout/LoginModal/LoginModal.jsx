@@ -36,6 +36,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               <img
                 src={require('../../../assets/Logo.png')}
                 style={{ height: 50, marginRight: -20 }}
+                alt="logo"
               />
               에 오신것을 환영합니다!
             </GuideBox>
@@ -80,6 +81,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               <img
                 src={require('../../../assets/Logo.png')}
                 style={{ height: 50, marginRight: -20 }}
+                alt="logo"
               />
               에서 활동할
             </GuideBox>
@@ -121,6 +123,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               <img
                 src={require('../../../assets/Logo.png')}
                 style={{ height: 60, marginRight: -30 }}
+                alt="logo"
               />
               가 당신의 고민을 해결해드릴게요!
             </GuideBox>

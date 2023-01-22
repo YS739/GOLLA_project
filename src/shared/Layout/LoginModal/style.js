@@ -92,4 +92,6 @@ export const CompleteBtn = styled.button`
   border: none;
   padding: 10;
   border-radius: 5px;
+
+  cursor: pointer;
 `;
