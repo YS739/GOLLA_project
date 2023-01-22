@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from '../pages/MainPage';
-import DetailPage from '../pages/DetailPage';
+import DetailPage from '../pages/DetailPage/DetailPage';
 import EditPage from '../pages/EditPage';
 import UploadPage from '../pages/UploadPage';
 import MyPage from '../pages/MyPage';
 import Layout from './Layout/Layout';
+import React from 'react';
 
 const Router = () => {
   return (

@@ -1,4 +1,5 @@
 import { Article, CardBox } from './style';
+import React from 'react';
 
 const UserPosts = () => {
   return (

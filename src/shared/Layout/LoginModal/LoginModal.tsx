@@ -19,7 +19,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { IoIosArrowBack } from 'react-icons/io';
 import { colors } from '../../../common/color';
 
-const LoginModal = ({ isOpen, setIsOpen }) => {
+const LoginModal = ({ isOpen, setIsOpen }: any) => {
   const [dp, setDp] = useState(0);
   const closeModal = () => {
     setIsOpen(false);
@@ -30,9 +30,9 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
       <ReactModal isOpen={isOpen} style={customStyle}>
         {dp === 0 && (
           <Modal>
-            <Btn setIsOpen={setIsOpen} onClick={closeModal}>
+            {/* <Btn setIsOpen={setIsOpen} onClick={closeModal}>
               <IoCloseSharp />
-            </Btn>
+            </Btn> */}
             <GuideBox>
               <img
                 src={require('../../../assets/Logo.png')}
@@ -74,9 +74,9 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               >
                 <IoIosArrowBack />
               </Btn>
-              <Btn setIsOpen={setIsOpen} onClick={closeModal}>
+              {/* <Btn setIsOpen={setIsOpen} onClick={closeModal}>
                 <IoCloseSharp />
-              </Btn>
+              </Btn> */}
             </ModalDiv>
             <GuideBox>
               <img
@@ -114,9 +114,9 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
               >
                 <IoIosArrowBack />
               </Btn>
-              <Btn setIsOpen={setIsOpen} onClick={closeModal}>
+              {/* <Btn setIsOpen={setIsOpen} onClick={closeModal}>
                 <IoCloseSharp />
-              </Btn>
+              </Btn> */}
             </ModalDiv>
 
             <GuideBox>가입이 완료 되었습니다.</GuideBox>
@@ -132,7 +132,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
             <div style={{ textAlign: 'center' }}>
               <CompleteBtn
                 onClick={closeModal}
-                style={{ backgroundColor: colors.red }}
+                style={{ backgroundColor: colors.RED }}
               >
                 시작하기
               </CompleteBtn>

@@ -1,7 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import { StyledHeader, HeaderContainer, Logo, HeaderBtnBox, HeaderBtn } from "./style";
+import { useNavigate } from 'react-router-dom';
+import {
+  StyledHeader,
+  HeaderContainer,
+  Logo,
+  HeaderBtnBox,
+  HeaderBtn,
+} from './style';
 import LoginModal from '../LoginModal';
 import { useState } from 'react';
+import React from 'react';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,7 +17,6 @@ const Header = () => {
   const openModal = () => {
     setIsOpen(true);
   };
-
 
   return (
     <StyledHeader>
