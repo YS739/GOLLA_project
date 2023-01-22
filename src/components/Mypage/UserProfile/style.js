@@ -25,6 +25,8 @@ const TitleBtn = styled.button`
   font-size: 15px;
   text-decoration: underline;
   padding-left: 10px;
+
+  cursor: pointer;
 `;
 const CardBox = styled.div`
   padding: 10px;
@@ -55,6 +57,8 @@ const CardBtn = styled.button`
   font-size: 20px;
   border: 1px solid ${colors.blue};
   border-radius: 5px;
+
+  cursor: pointer;
 `;
 
 export {
