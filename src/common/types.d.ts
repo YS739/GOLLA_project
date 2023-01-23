@@ -7,3 +7,12 @@ declare interface CommentItem {
     postId: string,
     userId: string
 }
+
+declare interface AddCommentItem {
+    content: string,
+    createdAt: string,
+    isA: boolean | null,
+    nickName: string,
+    postId: string,
+    userId: string
+}
