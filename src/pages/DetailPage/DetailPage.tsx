@@ -15,7 +15,7 @@ import React from 'react';
 const DetailPage = () => {
   return (
     <Section>
-      {/* TODO: 컴포넌트 분리 */}
+      {/* TODO: 본문 수정/삭제, 이전 글/다음 글 컴포넌트 분리 */}
       <PostEditDeleteBox>
         <Btn>수정</Btn>
         <Btn>삭제</Btn>
