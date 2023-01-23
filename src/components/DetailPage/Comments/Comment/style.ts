@@ -55,7 +55,7 @@ export const Name = styled.span`
 `
 
 export const Date = styled.span`
-    font-size: 14.5px;
+    font-size: 14px;
 `
 
 export const Content = styled.span`

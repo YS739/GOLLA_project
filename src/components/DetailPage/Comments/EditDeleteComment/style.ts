@@ -21,7 +21,7 @@ export const BtnBox = styled.div`
   display: flex;
   justify-content: center;
   :hover {
-    background-color: lightgray;
+    background-color: #f1f3f5;
   }
 `;
 

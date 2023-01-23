@@ -15,10 +15,6 @@ import EditDeleteComment from '../EditDeleteComment';
 import { colors } from '../../../../common/color';
 import { getDate } from '../../../../common/util';
 
-interface CommentProps {
-    comment: CommentItem;
-}
-
 const Comment = ({comment}: CommentProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +22,9 @@ const Comment = ({comment}: CommentProps) => {
     return (
         <CommentBox>
             <IconBox>
-            <CateIcon color={comment.isA ? colors.RED : colors.BLUE}>
-                <p>{comment.isA ? "A" : "B"}</p>
-            </CateIcon>
+                <CateIcon color={comment.isA ? colors.RED : colors.BLUE}>
+                    <p>{comment.isA ? "A" : "B"}</p>
+                </CateIcon>
             </IconBox>
             <CommentDatail>
             <NameDateBox>
@@ -42,7 +38,7 @@ const Comment = ({comment}: CommentProps) => {
             <ToggleBtn onClick={() => setIsOpen(!isOpen)}>
                 <BsThreeDotsVertical size="22" />
             </ToggleBtn>
-            {isOpen && <EditDeleteComment />}
+            {isOpen && <EditDeleteComment comment={comment} />}
         </CommentBox>
     )
 
