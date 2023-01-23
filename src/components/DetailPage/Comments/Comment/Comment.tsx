@@ -13,31 +13,34 @@ import {
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import EditDeleteComment from '../EditDeleteComment';
 import { colors } from '../../../../common/color';
+import { getDate } from '../../../../common/util';
 
-const Comment = () => {
+interface CommentProps {
+    comment: CommentItem;
+}
+
+const Comment = ({comment}: CommentProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <CommentBox>
             <IconBox>
-            <CateIcon color={colors.RED}>
-                <p>A</p>
+            <CateIcon color={comment.isA ? colors.RED : colors.BLUE}>
+                <p>{comment.isA ? "A" : "B"}</p>
             </CateIcon>
             </IconBox>
             <CommentDatail>
             <NameDateBox>
-                <Name>닉네임</Name>
-                <Date> 2023.01.19 19:23</Date>
+                <Name>{comment.nickName}</Name>
+                <Date>{getDate(comment.createdAt)}</Date>
             </NameDateBox>
             <Content>
-                댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
-                댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다. 댓글 내용입니다.
-                댓글 내용입니다. 댓글 내용입니다.
+                {comment.content}
             </Content>
             </CommentDatail>
             <ToggleBtn onClick={() => setIsOpen(!isOpen)}>
-            <BsThreeDotsVertical size="22" />
+                <BsThreeDotsVertical size="22" />
             </ToggleBtn>
             {isOpen && <EditDeleteComment />}
         </CommentBox>

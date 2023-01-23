@@ -12,7 +12,7 @@ export const EditDeleteBox = styled.div`
   flex-direction: column;
   position: absolute;
   right: 10px;
-  bottom: -30px;
+  top: 45px;
   z-index: 2;
 `;
 

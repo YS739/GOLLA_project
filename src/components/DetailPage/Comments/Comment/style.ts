@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const CommentBox = styled.div`
-    padding: 10px 30px 10px 10px;
+    padding: 18px 30px 18px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10px;
     position: relative;
     border-bottom: 1px solid gray;
 `
@@ -52,10 +51,11 @@ export const NameDateBox = styled.div`
 
 export const Name = styled.span`
     font-size: 15px;
+    margin-right: 5px;
 `
 
 export const Date = styled.span`
-    font-size: 15px;
+    font-size: 14.5px;
 `
 
 export const Content = styled.span`
