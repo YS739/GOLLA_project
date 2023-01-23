@@ -43,11 +43,18 @@ const AddComment = () => {
     } else if (!content) {
       alert("댓글을 입력해주세요.")
     } else if (isA === null) {
-      alert("A, B 중에 하나를 선택해주세요.")
+      alert("A, B 카테고리를 선택해주세요.")
     } else {
       addMutate(newComment)
       setContent("")
     }
+  };
+
+  // 엔터 키 눌러서 댓글 작성할 수 있음
+  const onKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      addCommentHandler();
+    };
   };
 
   const { mutate: addMutate } = useMutation(addComment, {
@@ -69,7 +76,7 @@ const AddComment = () => {
         </Category>
       </CategoryBox>
       <AddCommentBox>
-        <CommentInput value={content} onChange={(e) => setContent(e.target.value)} type="text" placeholder="댓글을 입력해주세요." />
+        <CommentInput value={content} onChange={(e) => setContent(e.target.value)} type="text" placeholder="댓글을 입력해주세요." onKeyPress={onKeyPress} />
         <AddBtn onClick={addCommentHandler}>댓글 등록</AddBtn>
       </AddCommentBox>
     </Article>

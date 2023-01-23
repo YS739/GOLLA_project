@@ -42,7 +42,7 @@ export const CateIcon = styled.div`
     }
 `
 export const CommentDatail = styled.div`
-
+    width: 100%;
 `
 
 export const NameDateBox = styled.div`
@@ -60,4 +60,17 @@ export const Date = styled.span`
 
 export const Content = styled.span`
     font-size: 17px;
+`
+
+export const EditInput = styled.input`
+    border: transparent;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    box-sizing: border-box;
+    padding: 2 5px;
+    width: 100%;
+    font-size: 17px;
+    :focus-visible {
+        outline: none;
+    }
 `

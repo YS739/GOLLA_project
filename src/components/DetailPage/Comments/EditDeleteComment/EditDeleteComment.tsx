@@ -1,9 +1,15 @@
 import React from "react";
 import { EditDeleteBox, BtnBox, Btn } from './style';
-import { deleteComment } from '../../../../common/api';
+import { editComment, deleteComment } from '../../../../common/api';
 import { useMutation, useQueryClient } from 'react-query';
 
-const EditDeleteComment = ({comment}: CommentProps) => {
+interface Props {
+  comment: CommentItem;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsInputOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const EditDeleteComment = ({comment, setIsOpen, setIsInputOpen}: Props) => {
 
   const queryClient = useQueryClient();
 
@@ -13,10 +19,15 @@ const EditDeleteComment = ({comment}: CommentProps) => {
       }
   });
 
+  const editHandler = () => {
+    setIsOpen(false);
+    setIsInputOpen(true);
+  };
+
   return (
     <EditDeleteBox>
       <BtnBox>
-        <Btn>댓글 수정</Btn>
+        <Btn onClick={editHandler}>댓글 수정</Btn>
       </BtnBox>
       <BtnBox>
         <Btn onClick={() => deleteMutate(comment.id)}>댓글 삭제</Btn>
