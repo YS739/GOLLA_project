@@ -4,7 +4,7 @@ import {
     PercentB,
   } from './style';
 
-const GageBar = () => {
+const GageBar = ({comments}: any) => {
 
     return (
         <GageBarContainer>
@@ -12,7 +12,6 @@ const GageBar = () => {
             <PercentB>60%</PercentB>
         </GageBarContainer>
     )
-
 }
 
 export default GageBar;

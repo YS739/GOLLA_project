@@ -1,6 +1,6 @@
 import React from "react";
 import { EditDeleteBox, BtnBox, Btn } from './style';
-import { editComment, deleteComment } from '../../../../common/api';
+import { deleteComment } from '../../../../common/api';
 import { useMutation, useQueryClient } from 'react-query';
 
 interface Props {
