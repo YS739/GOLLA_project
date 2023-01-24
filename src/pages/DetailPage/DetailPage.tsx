@@ -11,6 +11,7 @@ import AddComment from '../../components/DetailPage/Comments/AddComment';
 import GetComments from '../../components/DetailPage/Comments/GetComments';
 import { FcPrevious, FcNext } from 'react-icons/fc';
 import React from 'react';
+import GageBar from '../../components/DetailPage/GageBar';
 
 const DetailPage = () => {
   return (
@@ -21,6 +22,7 @@ const DetailPage = () => {
         <Btn>삭제</Btn>
       </PostEditDeleteBox>
       <Post>본문 들어갈 자리</Post>
+      <GageBar />
       <PrevNextPost>
         <BtnBox>
           <FcPrevious style={{ color: 'black' }} />
