@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../../common/color";
 
 // GageBar
 export const GageBarContainer = styled.div`
@@ -7,22 +6,16 @@ export const GageBarContainer = styled.div`
   height: 23px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   color: white;
 `;
 
-export const PercentA = styled.div`
-  width: 40%;
+export const Percent = styled.div<{color: string, percent: number}>`
+  width: ${(props) => `${props.percent}%`};
   height: 100%;
-  background-color: ${colors.RED};
+  background-color: ${(props) => props.color};
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 2px;
-`;
-
-export const PercentB = styled(PercentA)`
-  width: 60%;
-  background-color: ${colors.BLUE};
 `;
