@@ -1,4 +1,4 @@
-import { useRef, useState, FC, ChangeEvent, MouseEvent } from 'react';
+import { useRef, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { colors } from '../../common/color';
 import * as S from './style';
@@ -19,27 +19,15 @@ const UploadPage: UploadPageJ = () => {
   const categoryA_input = useRef<HTMLInputElement>(null);
   const categoryB_input = useRef<HTMLInputElement>(null);
 
-  const title = title_input.current?.value;
-  const content = content_textarea.current?.value;
-  const categoryA = categoryA_input.current?.value;
-  const categoryB = categoryB_input.current?.value;
-
   // FIXME: form에 연결하면 type 에러
   const PostBtnHandler = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (title?.trim().length === 0) {
-      alert('제목을 입력해주세요.');
-      title_input.current?.focus();
-    } else if (content?.trim().length === 0) {
-      alert('내용을 입력해주세요.');
-      content_textarea.current?.focus();
-    } else if (categoryA?.trim().length === 0) {
-      alert('A 내용을 입력해주세요.');
-      categoryA_input.current?.focus();
-    } else if (categoryB?.trim().length === 0) {
-      alert('B 내용을 입력해주세요.');
-      categoryB_input.current?.focus();
-    } else if (title && content && categoryA && categoryB) {
+    const title = title_input.current?.value;
+    const content = content_textarea.current?.value;
+    const categoryA = categoryA_input.current?.value;
+    const categoryB = categoryB_input.current?.value;
+
+    if (title && content && categoryA && categoryB) {
       const newPost: postJ = {
         title: title,
         content: content,
@@ -56,6 +44,20 @@ const UploadPage: UploadPageJ = () => {
       // TODO: ${post.id}로 바꾸기
       navigate(`/:id`);
       alert('등록 완료');
+    } else {
+      if (title?.trim().length === 0) {
+        alert('제목을 입력해주세요.');
+        title_input.current?.focus();
+      } else if (content?.trim().length === 0) {
+        alert('내용을 입력해주세요.');
+        content_textarea.current?.focus();
+      } else if (categoryA?.trim().length === 0) {
+        alert('A 내용을 입력해주세요.');
+        categoryA_input.current?.focus();
+      } else if (categoryB?.trim().length === 0) {
+        alert('B 내용을 입력해주세요.');
+        categoryB_input.current?.focus();
+      }
     }
   };
 
