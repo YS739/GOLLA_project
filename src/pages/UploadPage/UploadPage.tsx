@@ -19,8 +19,9 @@ import {
   CategoryB,
   AddBtn,
 } from './style';
-import { addDoc, collection } from 'firebase/firestore';
+import { collection } from 'firebase/firestore';
 import { db } from '../../common/firebase';
+import { useFirestoreCollectionMutation } from '@react-query-firebase/firestore';
 
 // 1. type 정의 - string | number??
 // 2. input 연결
@@ -29,12 +30,12 @@ import { db } from '../../common/firebase';
 // 4. useMutation 쓰기
 
 interface postJ {
-  title: string | number;
-  content: string | number;
+  title: string | undefined;
+  content: string | undefined;
   createdAt: Date;
-  categoryA: string | number;
-  categoryB: string | number;
-  // likes: [],
+  categoryA: string | undefined;
+  categoryB: string | undefined;
+  likes?: [];
   // userId: string;
   // nickName: string;
 }
@@ -44,10 +45,12 @@ type UploadPageJ = () => any;
 const UploadPage: UploadPageJ = () => {
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState<string>('');
-  const [content, setContent] = useState<string>('');
-  const [categoryA, setCategoryA] = useState<string>('');
-  const [categoryB, setCategoryB] = useState<string>('');
+  const ref = collection(db, 'posts');
+  const mutation = useFirestoreCollectionMutation(ref);
+  // const [title, setTitle] = useState<string>('');
+  // const [content, setContent] = useState<string>('');
+  // const [categoryA, setCategoryA] = useState<string>('');
+  // const [categoryB, setCategoryB] = useState<string>('');
 
   const title_input = useRef<HTMLInputElement>(null);
   const content_textarea = useRef<HTMLTextAreaElement>(null);
@@ -55,49 +58,59 @@ const UploadPage: UploadPageJ = () => {
   const categoryB_input = useRef<HTMLInputElement>(null);
 
   //  input에 입력된 값 가져오기
-  const InputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (e.target.name === 'title') {
-      setTitle(e.target.value);
-    }
-    if (e.target.name === 'cA') {
-      setCategoryA(e.target.value);
-    }
-    if (e.target.name === 'cB') {
-      setCategoryB(e.target.value);
-    }
-  };
-  // content = textarea에 입력된 값 가져오기
-  const TextareaHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    e.preventDefault();
+  // const InputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  //   e.preventDefault();
+  //   if (e.target.name === 'title') {
+  //     setTitle(e.target.value);
+  //   }
+  //   if (e.target.name === 'cA') {
+  //     setCategoryA(e.target.value);
+  //   }
+  //   if (e.target.name === 'cB') {
+  //     setCategoryB(e.target.value);
+  //   }
+  // };
+  // // content = textarea에 입력된 값 가져오기
+  // const TextareaHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  //   e.preventDefault();
 
-    setContent(e.target.value);
-  };
+  //   setContent(e.target.value);
+  // };
 
-  // 등록 버튼 -TODO: 유효성 검사 및 focus 추가하기 - 공백 금지
   // FIXME: form에 연결하면 type 에러
   const PostBtnHandler = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const newPost: postJ = {
-      title,
-      content,
+      title: title_input.current?.value,
+      content: content_textarea.current?.value,
       createdAt: new Date(),
       // TODO: new Date().toLocaleString("ko-KR") 로 변경?
-      categoryA,
-      categoryB,
+      categoryA: categoryA_input.current?.value,
+      categoryB: categoryB_input.current?.value,
       // likes: [],
       // userId: authService.currentUser.uid,
       // nickName: authService.currentUser.displayname
     };
-    await addDoc(collection(db, 'posts'), newPost);
+    //
+    if (title_input.current?.value.trim().length === 0) {
+      alert('제목을 입력해주세요.');
+      title_input.current?.focus();
+    } else if (content_textarea.current?.value.trim().length === 0) {
+      alert('내용을 입력해주세요.');
+      content_textarea.current?.focus();
+    } else if (categoryA_input.current?.value.trim().length === 0) {
+      alert('A카테고리 내용을 입력해주세요.');
+      categoryA_input.current.focus();
+    } else if (categoryB_input.current?.value.trim().length === 0) {
+      alert('B카테고리 내용을 입력해주세요.');
+      categoryB_input.current.focus();
+    } else {
+      mutation.mutate(newPost);
 
-    setTitle('');
-    setContent('');
-    setCategoryA('');
-    setCategoryB('');
-    // TODO: ${post.id}로 바꾸기
-    navigate(`/:id`);
-    alert('등록 완료');
+      // TODO: ${post.id}로 바꾸기
+      navigate(`/:id`);
+      alert('등록 완료');
+    }
   };
 
   return (
@@ -110,8 +123,8 @@ const UploadPage: UploadPageJ = () => {
               <TitleInput
                 ref={title_input}
                 name="title"
-                value={title}
-                onChange={InputHandler}
+                // value={title}
+                // onChange={InputHandler}
               />
             </PostTitleBox>
             <PostContentBox>
@@ -119,8 +132,8 @@ const UploadPage: UploadPageJ = () => {
               <ContentTextarea
                 ref={content_textarea}
                 name="content"
-                value={content}
-                onChange={TextareaHandler}
+                // value={content}
+                // onChange={TextareaHandler}
               />
             </PostContentBox>
           </WritingBox>
@@ -130,8 +143,8 @@ const UploadPage: UploadPageJ = () => {
               <input
                 ref={categoryA_input}
                 name="cA"
-                value={categoryA}
-                onChange={InputHandler}
+                // value={categoryA}
+                // onChange={InputHandler}
               />
             </ABox>
             <BBox>
@@ -139,8 +152,8 @@ const UploadPage: UploadPageJ = () => {
               <input
                 ref={categoryB_input}
                 name="cB"
-                value={categoryB}
-                onChange={InputHandler}
+                // value={categoryB}
+                // onChange={InputHandler}
               />
             </BBox>
           </CategoryBox>
