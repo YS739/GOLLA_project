@@ -1,4 +1,4 @@
-import { useRef, useState, FC, ChangeEvent } from 'react';
+import { useRef, useState, FC, ChangeEvent, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { colors } from '../../common/color';
 import {
@@ -28,7 +28,20 @@ import { db } from '../../common/firebase';
 // 3. firebase addDoc
 // 4. useMutation 쓰기
 
-const UploadPage: FC = () => {
+interface postJ {
+  title: string | number;
+  content: string | number;
+  createdAt: Date;
+  categoryA: string | number;
+  categoryB: string | number;
+  // likes: [],
+  // userId: string;
+  // nickName: string;
+}
+
+type UploadPageJ = () => any;
+
+const UploadPage: UploadPageJ = () => {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState<string>('');
@@ -61,31 +74,36 @@ const UploadPage: FC = () => {
     setContent(e.target.value);
   };
 
-  // 등록 버튼 -TODO: 유효성 검사 및 focus 추가하기
-  const PostBtnHandler = async () => {
-    await addDoc(collection(db, 'posts'), {
+  // 등록 버튼 -TODO: 유효성 검사 및 focus 추가하기 - 공백 금지
+  // FIXME: form에 연결하면 type 에러
+  const PostBtnHandler = async (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const newPost: postJ = {
       title,
       content,
       createdAt: new Date(),
+      // TODO: new Date().toLocaleString("ko-KR") 로 변경?
       categoryA,
       categoryB,
       // likes: [],
       // userId: authService.currentUser.uid,
       // nickName: authService.currentUser.displayname
-    });
-    // TODO: ${post.id}로 바꾸기
-    navigate(`/:id`);
-    // FIXME: 등록 버튼 누르고 detail로 이동했다가 다시 post로 돌아옴..
+    };
+    await addDoc(collection(db, 'posts'), newPost);
+
     setTitle('');
     setContent('');
     setCategoryA('');
     setCategoryB('');
+    // TODO: ${post.id}로 바꾸기
+    navigate(`/:id`);
+    alert('등록 완료');
   };
 
   return (
     <Section>
       <Article>
-        <PostForm onSubmit={PostBtnHandler}>
+        <PostForm>
           <WritingBox>
             <PostTitleBox>
               <PostTitle>제목</PostTitle>
@@ -127,7 +145,7 @@ const UploadPage: FC = () => {
             </BBox>
           </CategoryBox>
           <div style={{ width: '100%' }}>
-            <AddBtn type="submit">등록</AddBtn>
+            <AddBtn onClick={PostBtnHandler}>등록</AddBtn>
           </div>
         </PostForm>
       </Article>
