@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { colors } from '../../../../common/color';
-import {
-  Article,
-  CategoryBox,
-  Category,
-  AddCommentBox,
-  CommentInput,
-  AddBtn,
-} from './style';
+import * as S from './style';
 import { postTime } from '../../../../common/util';
 import { useMutation, useQueryClient } from 'react-query';
 import { addComment } from '../../../../common/api';
@@ -64,22 +57,22 @@ const AddComment = () => {
   })
 
   return (
-    <Article>
-      <CategoryBox>
-        <Category color={colors.RED}>
+    <S.Article>
+      <S.CategoryBox>
+        <S.Category color={colors.RED}>
           <input onChange={selectAB} type="radio" name="category" value="true" />
           <label htmlFor="A"> A: 짜장면을 먹을까요</label>
-        </Category>
-        <Category color={colors.BLUE}>
+        </S.Category>
+        <S.Category color={colors.BLUE}>
           <input onChange={selectAB} type="radio" name="category" value="false" />
           <label htmlFor="B"> B: 짬뽕을 먹을까요</label>
-        </Category>
-      </CategoryBox>
-      <AddCommentBox>
-        <CommentInput value={content} onChange={(e) => setContent(e.target.value)} type="text" placeholder="댓글을 입력해주세요." onKeyPress={onKeyPress} />
-        <AddBtn onClick={addCommentHandler}>댓글 등록</AddBtn>
-      </AddCommentBox>
-    </Article>
+        </S.Category>
+      </S.CategoryBox>
+      <S.AddCommentBox>
+        <S.CommentInput value={content} onChange={(e) => setContent(e.target.value)} type="text" placeholder="댓글을 입력해주세요." onKeyPress={onKeyPress} />
+        <S.AddBtn onClick={addCommentHandler}>댓글 등록</S.AddBtn>
+      </S.AddCommentBox>
+    </S.Article>
   );
 };
 

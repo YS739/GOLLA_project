@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-    CommentBox,
-    ToggleBtn,
-    IconBox,
-    CateIcon,
-    CommentDatail,
-    NameDateBox,
-    Name,
-    Date,
-    Content,
-    EditInput
-  } from './style';
+import * as S from './style';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import EditDeleteComment from '../EditDeleteComment';
 import { colors } from '../../../../common/color';
@@ -32,30 +21,30 @@ const Comment = ({comment}: CommentProps) => {
       });
     
     return (
-        <CommentBox>
-            <IconBox>
-                <CateIcon color={comment.isA ? colors.RED : colors.BLUE}>
+        <S.CommentBox>
+            <S.IconBox>
+                <S.CateIcon color={comment.isA ? colors.RED : colors.BLUE}>
                     <p>{comment.isA ? "A" : "B"}</p>
-                </CateIcon>
-            </IconBox>
-            <CommentDatail>
-                <NameDateBox>
-                    <Name>{comment.nickName}</Name>
-                    <Date>{getDate(comment.createdAt)}</Date>
-                </NameDateBox>
+                </S.CateIcon>
+            </S.IconBox>
+            <S.CommentDatail>
+                <S.NameDateBox>
+                    <S.Name>{comment.nickName}</S.Name>
+                    <S.Date>{getDate(comment.createdAt)}</S.Date>
+                </S.NameDateBox>
                 { isInputOpen 
                 // TODO: ref로 focus??
                 // 댓글 수정할 때 a,b도 다시 선택할 수 있게?? 그럼 모달로 띄워야 되나?
-                ? <EditInput value={editContent} onChange={(e) => setEditContent(e.target.value)}/>
-                : <Content>
+                ? <S.EditInput value={editContent} onChange={(e) => setEditContent(e.target.value)}/>
+                : <S.Content>
                     {comment.content}
-                </Content> }
-            </CommentDatail>
-            <ToggleBtn onClick={() => setIsOpen(!isOpen)}>
+                </S.Content> }
+            </S.CommentDatail>
+            <S.ToggleBtn onClick={() => setIsOpen(!isOpen)}>
                 <BsThreeDotsVertical size="22" />
-            </ToggleBtn>
-            {isOpen && <EditDeleteComment comment={comment} setIsOpen={setIsOpen} setIsInputOpen={setIsInputOpen} />}
-        </CommentBox>
+            </S.ToggleBtn>
+            {isOpen && <EditDeleteComment comment={comment} setIsOpen={setIsOpen} isInputOpen={isInputOpen} setIsInputOpen={setIsInputOpen} />}
+        </S.CommentBox>
     )
 };
 
