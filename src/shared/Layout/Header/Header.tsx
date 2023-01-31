@@ -1,37 +1,49 @@
 import { useNavigate } from 'react-router-dom';
-import {
-  StyledHeader,
-  HeaderContainer,
-  Logo,
-  HeaderBtnBox,
-  HeaderBtn,
-} from './style';
+import * as S from './style';
 import LoginModal from '../LoginModal';
 import { useState } from 'react';
-import React from 'react';
+import { authService } from '../../../common/firebase';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  // 로그인 확인을 위한 세션스토리지 키 확인. 키 존재? => 로그인 되어있음 / 없음 => 로그인 안 되어있음
+  const isLoggedIn = sessionStorage.key(0);
 
   const openModal = () => {
     setIsOpen(true);
   };
 
+  const logOutHandler = () => {
+    signOut(authService)
+      .then(() => {
+        alert('로그아웃이 완료되었습니다.');
+        navigate('/');
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
-    <StyledHeader>
-      <HeaderContainer>
-        <Logo
+    <S.StyledHeader>
+      <S.HeaderContainer>
+        <S.Logo
           onClick={() => navigate('/')}
           src={require('../../../assets/Logo.png')}
         />
-        <HeaderBtnBox>
-          <HeaderBtn onClick={() => navigate('/upload')}>POST</HeaderBtn>
-          <HeaderBtn onClick={openModal}>LOGIN</HeaderBtn>
-        </HeaderBtnBox>
+        <S.HeaderBtnBox>
+          <S.HeaderBtn onClick={() => navigate('/upload')}>POST</S.HeaderBtn>
+
+          {!isLoggedIn && <S.HeaderBtn onClick={openModal}>LOGIN</S.HeaderBtn>}
+          {isLoggedIn && (
+            <S.HeaderBtn onClick={logOutHandler}>LOGOUT</S.HeaderBtn>
+          )}
+        </S.HeaderBtnBox>
         <LoginModal isOpen={isOpen} setIsOpen={setIsOpen}></LoginModal>
-      </HeaderContainer>
-    </StyledHeader>
+      </S.HeaderContainer>
+    </S.StyledHeader>
   );
 };
 
