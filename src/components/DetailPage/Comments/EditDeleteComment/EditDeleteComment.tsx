@@ -14,16 +14,17 @@ const EditDeleteComment = ({comment, setIsOpen, isInputOpen, setIsInputOpen}: Pr
 
   const queryClient = useQueryClient();
 
+  // [댓글 수정] 버튼 클릭 시 작동
+  const editHandler = () => {
+    setIsOpen(false);
+    setIsInputOpen(!isInputOpen);
+  };
+
   const { mutate: deleteMutate } = useMutation(deleteComment, {
       onSuccess: () => {
           queryClient.invalidateQueries("comments")
       }
   });
-
-  const editHandler = () => {
-    setIsOpen(false);
-    setIsInputOpen(!isInputOpen);
-  };
 
   return (
     <S.EditDeleteBox>

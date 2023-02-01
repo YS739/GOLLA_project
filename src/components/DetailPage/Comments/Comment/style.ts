@@ -67,10 +67,22 @@ export const EditInput = styled.input`
     background-color: transparent;
     border-bottom: 1px solid gray;
     box-sizing: border-box;
-    padding: 2 5px;
-    width: 100%;
+    padding: 5px;
+    width: 90%;
     font-size: 17px;
     :focus-visible {
         outline: none;
     }
+`
+
+export const EditBtn = styled.button`
+    height: 30px;
+    width: 8%;
+    border: transparent;
+    background-color: #495057;
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
 `
