@@ -1,4 +1,4 @@
-import { useRef, MouseEvent } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { colors } from '../../common/color';
 import * as S from './style';
@@ -19,8 +19,7 @@ const UploadPage: UploadPageJ = () => {
   const categoryA_input = useRef<HTMLInputElement>(null);
   const categoryB_input = useRef<HTMLInputElement>(null);
 
-  // FIXME: form에 연결하면 type 에러
-  const PostBtnHandler = async (e: MouseEvent<HTMLButtonElement>) => {
+  const PostSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
     const title = title_input.current?.value;
     const content = content_textarea.current?.value;
@@ -64,7 +63,7 @@ const UploadPage: UploadPageJ = () => {
   return (
     <S.Section>
       <S.Article>
-        <S.PostForm>
+        <S.PostForm onSubmit={PostSubmitHandler}>
           <S.WritingBox>
             <S.PostTitleBox>
               <S.PostTitle>제목</S.PostTitle>
@@ -86,7 +85,7 @@ const UploadPage: UploadPageJ = () => {
             </S.BBox>
           </S.CategoryBox>
           <div style={{ width: '100%' }}>
-            <S.AddBtn onClick={PostBtnHandler}>등록</S.AddBtn>
+            <S.AddBtn>등록</S.AddBtn>
           </div>
         </S.PostForm>
       </S.Article>
