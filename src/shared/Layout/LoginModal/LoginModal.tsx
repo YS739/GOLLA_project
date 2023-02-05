@@ -15,7 +15,7 @@ import {
   GitHubProvider,
   GoogleProvider,
 } from '../../../common/firebase';
-import { isOpenPropsP } from '../../../common/types';
+import { isOpenPropsP } from '../../../types';
 
 const LoginModal = ({ isOpen, setIsOpen }: isOpenPropsP) => {
   const [dp, setDp] = useState(0);

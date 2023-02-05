@@ -1,54 +1,95 @@
+import React, { FormEvent, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { colors } from '../../common/color';
-import {
-  Section,
-  Article,
-  PostForm,
-  WritingBox,
-  PostTitleBox,
-  PostTitle,
-  TitleInput,
-  PostContentBox,
-  PostContent,
-  ContentTextarea,
-  CategoryBox,
-  ABox,
-  CategoryA,
-  BBox,
-  CategoryB,
-  AddBtn,
-} from './style';
+import * as S from './style';
+import { collection } from 'firebase/firestore';
+import { db } from '../../common/firebase';
+import { useFirestoreCollectionMutation } from '@react-query-firebase/firestore';
 
-const UploadPage = () => {
+type UploadPageJ = () => any;
+
+const UploadPage: UploadPageJ = () => {
+  const navigate = useNavigate();
+
+  const ref = collection(db, 'posts');
+  const mutation = useFirestoreCollectionMutation(ref);
+
+  const title_input = useRef<HTMLInputElement>(null);
+  const content_textarea = useRef<HTMLTextAreaElement>(null);
+  const categoryA_input = useRef<HTMLInputElement>(null);
+  const categoryB_input = useRef<HTMLInputElement>(null);
+
+  // Post 등록하기
+  const PostSubmitHandler = async (e: FormEvent) => {
+    e.preventDefault();
+    const title = title_input.current?.value;
+    const content = content_textarea.current?.value;
+    const categoryA = categoryA_input.current?.value;
+    const categoryB = categoryB_input.current?.value;
+
+    if (title && content && categoryA && categoryB) {
+      const newPost = {
+        title,
+        content,
+        createdAt: new Date(),
+        categoryA,
+        categoryB,
+        // likes: [],
+        // userId: authService.currentUser.uid,
+        // nickName: authService.currentUser.displayname
+      };
+      mutation.mutate(newPost);
+
+      // TODO: ${post.id}로 바꾸기
+      navigate(`/:id`);
+      alert('등록 완료');
+    } else {
+      if (title?.trim().length === 0) {
+        alert('제목을 입력해주세요.');
+        title_input.current?.focus();
+      } else if (content?.trim().length === 0) {
+        alert('내용을 입력해주세요.');
+        content_textarea.current?.focus();
+      } else if (categoryA?.trim().length === 0) {
+        alert('A 내용을 입력해주세요.');
+        categoryA_input.current?.focus();
+      } else if (categoryB?.trim().length === 0) {
+        alert('B 내용을 입력해주세요.');
+        categoryB_input.current?.focus();
+      }
+    }
+  };
+
   return (
-    <Section>
-      <Article>
-        <PostForm>
-          <WritingBox>
-            <PostTitleBox>
-              <PostTitle>제목</PostTitle>
-              <TitleInput />
-            </PostTitleBox>
-            <PostContentBox>
-              <PostContent>내용</PostContent>
-              <ContentTextarea />
-            </PostContentBox>
-          </WritingBox>
-          <CategoryBox>
-            <ABox>
-              <CategoryA color={colors.RED}>A</CategoryA>
-              <input />
-            </ABox>
-            <BBox>
-              <CategoryB color={colors.BLUE}>B</CategoryB>
-              <input />
-            </BBox>
-          </CategoryBox>
+    <S.Section>
+      <S.Article>
+        <S.PostForm onSubmit={PostSubmitHandler}>
+          <S.WritingBox>
+            <S.PostTitleBox>
+              <S.PostTitle>제목</S.PostTitle>
+              <S.TitleInput ref={title_input} />
+            </S.PostTitleBox>
+            <S.PostContentBox>
+              <S.PostContent>내용</S.PostContent>
+              <S.ContentTextarea ref={content_textarea} />
+            </S.PostContentBox>
+          </S.WritingBox>
+          <S.CategoryBox>
+            <S.ABox>
+              <S.CategoryA color={colors.RED}>A</S.CategoryA>
+              <input ref={categoryA_input} />
+            </S.ABox>
+            <S.BBox>
+              <S.CategoryB color={colors.BLUE}>B</S.CategoryB>
+              <input ref={categoryB_input} />
+            </S.BBox>
+          </S.CategoryBox>
           <div style={{ width: '100%' }}>
-            <AddBtn>등록</AddBtn>
+            <S.AddBtn>등록</S.AddBtn>
           </div>
-        </PostForm>
-      </Article>
-    </Section>
+        </S.PostForm>
+      </S.Article>
+    </S.Section>
   );
 };
 
