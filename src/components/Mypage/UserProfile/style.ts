@@ -24,9 +24,12 @@ const TitleBtn = styled.button`
   all: unset;
   font-size: 15px;
   text-decoration: underline;
+  color: gray;
   padding-left: 10px;
-
   cursor: pointer;
+  :hover {
+    color: red;
+  }
 `;
 const CardBox = styled.div`
   padding: 10px;

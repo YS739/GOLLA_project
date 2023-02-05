@@ -15,8 +15,8 @@ const Header = () => {
     setIsOpen(true);
   };
 
-  const logOutHandler = () => {
-    signOut(authService)
+  const logOutHandler = async () => {
+    await signOut(authService)
       .then(() => {
         alert('로그아웃이 완료되었습니다.');
         navigate('/');
@@ -34,11 +34,20 @@ const Header = () => {
           src={require('../../../assets/Logo.png')}
         />
         <S.HeaderBtnBox>
-          <S.HeaderBtn onClick={() => navigate('/upload')}>POST</S.HeaderBtn>
+          <S.HeaderBtn
+            onClick={() => {
+              isLoggedIn ? navigate('/upload') : alert('로그인 해주세요.');
+            }}
+          >
+            POST
+          </S.HeaderBtn>
 
           {!isLoggedIn && <S.HeaderBtn onClick={openModal}>LOGIN</S.HeaderBtn>}
           {isLoggedIn && (
-            <S.HeaderBtn onClick={logOutHandler}>LOGOUT</S.HeaderBtn>
+            <>
+              <S.HeaderBtn onClick={() => navigate('/my')}>MYPAGE</S.HeaderBtn>
+              <S.HeaderBtn onClick={logOutHandler}>LOGOUT</S.HeaderBtn>
+            </>
           )}
         </S.HeaderBtnBox>
         <LoginModal isOpen={isOpen} setIsOpen={setIsOpen}></LoginModal>

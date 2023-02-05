@@ -31,9 +31,8 @@ const LoginModal = ({ isOpen, setIsOpen }: isOpenPropsP) => {
     if (arr[1] === 'Jan') {
       arr[1] = '01';
     }
-    const a = arr[3].replaceAll(':', '');
-    const time = parseInt(arr[2] + arr[1] + arr[0] + a);
-    console.log(`${date}:`, time);
+    const arr3 = arr[3].replaceAll(':', '');
+    const time = parseInt(arr[2] + arr[1] + arr[0] + arr3);
     return time;
   };
 
@@ -45,11 +44,15 @@ const LoginModal = ({ isOpen, setIsOpen }: isOpenPropsP) => {
     } else {
       provider = GoogleProvider;
     }
+
+    // 유저 안에 닉네임이
+
     //setPersistence => 로그인 시 세션스토리지에 유저 정보 저장
     setPersistence(authService, browserSessionPersistence).then(() => {
       signInWithPopup(authService, provider).then(() => {
         const createdAt = authService.currentUser?.metadata.creationTime;
         const lastLoginAt = authService.currentUser?.metadata.lastSignInTime;
+
         changeTimeHandler(createdAt) < changeTimeHandler(lastLoginAt)
           ? closeModal()
           : setDp(1);
@@ -57,13 +60,12 @@ const LoginModal = ({ isOpen, setIsOpen }: isOpenPropsP) => {
     });
   };
 
-  const changeNickNameHandler = () => {
+  const changeNickNameHandler = async () => {
     if (authService.currentUser) {
-      updateProfile(authService.currentUser, {
+      await updateProfile(authService.currentUser, {
         displayName: nickName,
       }).then(() => setDp(2));
     }
-    console.log(authService.currentUser?.displayName, '로 변경됨');
   };
   return (
     <>
