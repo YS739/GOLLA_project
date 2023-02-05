@@ -4,6 +4,7 @@ import { colors } from '../../common/color';
 import * as S from './style';
 import { collection } from 'firebase/firestore';
 import { db } from '../../common/firebase';
+// TODO: useMutation만 활용하기
 // import { useFirestoreCollectionMutation } from '@react-query-firebase/firestore';
 
 type UploadPageJ = () => any;
@@ -12,6 +13,7 @@ const UploadPage: UploadPageJ = () => {
   const navigate = useNavigate();
 
   const ref = collection(db, 'posts');
+
   // const mutation = useFirestoreCollectionMutation(ref);
 
   const title_input = useRef<HTMLInputElement>(null);
@@ -38,6 +40,7 @@ const UploadPage: UploadPageJ = () => {
         // userId: authService.currentUser.uid,
         // nickName: authService.currentUser.displayname
       };
+
       // mutation.mutate(newPost);
 
       // TODO: ${post.id}로 바꾸기
