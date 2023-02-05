@@ -22,6 +22,11 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.img`
   height: 50px;
   cursor: pointer;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
 `;
 
 export const HeaderBtnBox = styled.div`

@@ -28,12 +28,12 @@ const UploadPage: UploadPageJ = () => {
     const categoryB = categoryB_input.current?.value;
 
     if (title && content && categoryA && categoryB) {
-      const newPost: postJ = {
-        title: title,
-        content: content,
+      const newPost = {
+        title,
+        content,
         createdAt: new Date(),
-        categoryA: categoryA,
-        categoryB: categoryB,
+        categoryA,
+        categoryB,
         // likes: [],
         // userId: authService.currentUser.uid,
         // nickName: authService.currentUser.displayname
