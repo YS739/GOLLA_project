@@ -1,16 +1,40 @@
 import React from "react";
-import { EditDeleteBox, BtnBox, Btn } from './style';
+import * as S from './style';
+import { deleteComment } from '../../../../common/api';
+import { useMutation, useQueryClient } from 'react-query';
 
-const EditDeleteComment = () => {
+interface Props {
+  comment: CommentItem;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isInputOpen: boolean,
+  setIsInputOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const EditDeleteComment = ({comment, setIsOpen, isInputOpen, setIsInputOpen}: Props) => {
+
+  const queryClient = useQueryClient();
+
+  // [댓글 수정] 버튼 클릭 시 작동
+  const editHandler = () => {
+    setIsOpen(false);
+    setIsInputOpen(!isInputOpen);
+  };
+
+  const { mutate: deleteMutate } = useMutation(deleteComment, {
+      onSuccess: () => {
+          queryClient.invalidateQueries("comments")
+      }
+  });
+
   return (
-    <EditDeleteBox>
-      <BtnBox>
-        <Btn>댓글 수정</Btn>
-      </BtnBox>
-      <BtnBox>
-        <Btn>댓글 삭제</Btn>
-      </BtnBox>
-    </EditDeleteBox>
+    <S.EditDeleteBox>
+      <S.BtnBox>
+        <S.Btn onClick={editHandler}>댓글 수정</S.Btn>
+      </S.BtnBox>
+      <S.BtnBox>
+        <S.Btn onClick={() => deleteMutate(comment.id)}>댓글 삭제</S.Btn>
+      </S.BtnBox>
+    </S.EditDeleteBox>
   )
 };
 

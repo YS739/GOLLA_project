@@ -12,7 +12,7 @@ export const EditDeleteBox = styled.div`
   flex-direction: column;
   position: absolute;
   right: 10px;
-  bottom: -30px;
+  top: 45px;
   z-index: 2;
 `;
 
@@ -21,7 +21,7 @@ export const BtnBox = styled.div`
   display: flex;
   justify-content: center;
   :hover {
-    background-color: lightgray;
+    background-color: #f1f3f5;
   }
 `;
 

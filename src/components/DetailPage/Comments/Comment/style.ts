@@ -1,26 +1,12 @@
 import styled from "styled-components";
 
-export const Article = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    box-sizing: border-box;
-`
-
-export const CommentCount = styled.div`
-    padding: 10px;  
-`
-
 export const CommentBox = styled.div`
-    padding: 10px 30px 10px 10px;
+    padding: 18px 30px 18px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10px;
     position: relative;
     border-bottom: 1px solid gray;
 `
@@ -56,7 +42,7 @@ export const CateIcon = styled.div`
     }
 `
 export const CommentDatail = styled.div`
-
+    width: 100%;
 `
 
 export const NameDateBox = styled.div`
@@ -65,12 +51,38 @@ export const NameDateBox = styled.div`
 
 export const Name = styled.span`
     font-size: 15px;
+    margin-right: 5px;
 `
 
 export const Date = styled.span`
-    font-size: 15px;
+    font-size: 14px;
 `
 
 export const Content = styled.span`
     font-size: 17px;
+`
+
+export const EditInput = styled.input`
+    border: transparent;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 90%;
+    font-size: 17px;
+    :focus-visible {
+        outline: none;
+    }
+`
+
+export const EditBtn = styled.button`
+    height: 30px;
+    width: 8%;
+    border: transparent;
+    background-color: #495057;
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: 700;
+    cursor: pointer;
 `
