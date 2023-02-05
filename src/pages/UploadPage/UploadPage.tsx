@@ -19,6 +19,7 @@ const UploadPage: UploadPageJ = () => {
   const categoryA_input = useRef<HTMLInputElement>(null);
   const categoryB_input = useRef<HTMLInputElement>(null);
 
+  // Post 등록하기
   const PostSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
     const title = title_input.current?.value;
@@ -31,7 +32,6 @@ const UploadPage: UploadPageJ = () => {
         title: title,
         content: content,
         createdAt: new Date(),
-        // TODO: new Date().toLocaleString("ko-KR") 로 변경?
         categoryA: categoryA,
         categoryB: categoryB,
         // likes: [],
