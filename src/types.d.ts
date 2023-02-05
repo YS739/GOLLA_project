@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+// import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 // Post type
 declare interface postJ {
