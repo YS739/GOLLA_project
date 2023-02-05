@@ -83,6 +83,6 @@ export const EditBtn = styled.button`
     color: white;
     border-radius: 10px;
     margin-left: 10px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
 `

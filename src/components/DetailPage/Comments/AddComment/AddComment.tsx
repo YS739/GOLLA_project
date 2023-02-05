@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { colors } from '../../../../common/color';
 import * as S from './style';
 import { postTime } from '../../../../common/util';
@@ -7,9 +7,14 @@ import { addComment } from '../../../../common/api';
 
 const AddComment = () => {
 
-  const [content, setContent] = useState("");
-  const [isA, setIsA] = useState<null | boolean>(null);
   const queryClient = useQueryClient();
+
+  // 댓글 작성 내용
+  const [content, setContent] = useState("");
+  // A, B 선택 여부
+  const [isA, setIsA] = useState<null | boolean>(null);
+  // A, B 선택 input에 연결
+  const radioInput = useRef<HTMLInputElement>(null);
 
   const newComment = {
     content,
@@ -21,7 +26,7 @@ const AddComment = () => {
   };
 
   // A, B 선택에 따라 boolean 출력
-  const selectAB = (e: any) => {
+  const selectAB = (e: React.ChangeEvent<HTMLInputElement>) => {
     if ( e.target.value === "true" ) {
       setIsA(true);
     } else {
@@ -30,6 +35,7 @@ const AddComment = () => {
   };
 
   // 댓글 작성하기
+  //TODO: A,B 선택도 초기화하기
   const addCommentHandler = async () => {
     if (!content && isA === null ) {
       alert("댓글을 입력해주세요.")
@@ -37,14 +43,16 @@ const AddComment = () => {
       alert("댓글을 입력해주세요.")
     } else if (isA === null) {
       alert("A, B 카테고리를 선택해주세요.")
+    // } else if (content && isA !== null && radioInput.current) {
     } else {
       addMutate(newComment)
       setContent("")
+      // radioInput.current.forEach((item) => item.checked = false)
     }
   };
 
   // 엔터 키 눌러서 댓글 작성할 수 있음
-  const onKeyPress = (e: any) => {
+  const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       addCommentHandler();
     };
@@ -60,11 +68,11 @@ const AddComment = () => {
     <S.Article>
       <S.CategoryBox>
         <S.Category color={colors.RED}>
-          <input onChange={selectAB} type="radio" name="category" value="true" />
+          <input onChange={selectAB} ref={radioInput} type="radio" name="category" value="true" />
           <label htmlFor="A"> A: 짜장면을 먹을까요</label>
         </S.Category>
         <S.Category color={colors.BLUE}>
-          <input onChange={selectAB} type="radio" name="category" value="false" />
+          <input onChange={selectAB} ref={radioInput} type="radio" name="category" value="false" />
           <label htmlFor="B"> B: 짬뽕을 먹을까요</label>
         </S.Category>
       </S.CategoryBox>

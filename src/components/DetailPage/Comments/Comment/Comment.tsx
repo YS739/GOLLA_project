@@ -13,6 +13,13 @@ const Comment = ({ comment }: CommentProps) => {
   const [editContent, setEditContent] = useState(comment.content);
   const queryClient = useQueryClient();
 
+  // 엔터 키 눌러서 댓글 작성할 수 있음
+  const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      editMutate({ id: comment.id, editObj: { content: editContent } });
+    }
+  };
+
   // 댓글 수정 후 [등록] 버튼 클릭 시 작동
   //FIXME: any 타입 수정하기
   const { mutate: editMutate }: any = useMutation(editComment, {
@@ -34,20 +41,32 @@ const Comment = ({ comment }: CommentProps) => {
           <S.Name>{comment.nickName}</S.Name>
           <S.Date>{getDate(comment.createdAt)}</S.Date>
         </S.NameDateBox>
+
         {isInputOpen ? (
-          // TODO: ref로 focus??
-          // 댓글 수정할 때 a,b도 다시 선택할 수 있게?? 그럼 모달로 띄워야 되나?
+          // [댓글 수정] 버튼 클릭 시 나타나는 부분
           <>
             <S.EditInput
               autoFocus
               value={editContent}
               onChange={(e) => setEditContent(e.target.value)}
+              onKeyPress={onKeyPress}
             />
-            <S.EditBtn onClick={() => editMutate({id: comment.id, editObj: {content: editContent}})}>등록</S.EditBtn>
+            {/* TODO: 수정 취소 버튼도 만들까?? */}
+            <S.EditBtn
+              onClick={() =>
+                editMutate({
+                  id: comment.id,
+                  editObj: { content: editContent },
+                })
+              }
+            >
+              등록
+            </S.EditBtn>
           </>
         ) : (
           <S.Content>{comment.content}</S.Content>
         )}
+
       </S.CommentDatail>
       <S.ToggleBtn onClick={() => setIsOpen(!isOpen)}>
         <BsThreeDotsVertical size="22" />
@@ -65,3 +84,5 @@ const Comment = ({ comment }: CommentProps) => {
 };
 
 export default Comment;
+
+

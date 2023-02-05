@@ -1,3 +1,5 @@
+import { Dispatch, ReactNode, SetStateAction } from 'react';
+
 // 댓글 불러올 때 interface
 declare interface CommentItem {
     content: string,
@@ -23,3 +25,13 @@ declare interface AddCommentItem {
 declare interface CommentProps {
     comment: CommentItem;
 }
+
+declare interface isOpenPropsP {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+declare interface PropsP {
+  style: ReactNode;
+}
+

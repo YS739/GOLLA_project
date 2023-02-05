@@ -5,7 +5,6 @@ import EditPage from '../pages/EditPage';
 import UploadPage from '../pages/UploadPage';
 import MyPage from '../pages/MyPage';
 import Layout from './Layout/Layout';
-import React from 'react';
 
 const Router = () => {
   return (
