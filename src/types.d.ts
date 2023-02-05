@@ -32,9 +32,9 @@ declare interface postJ {
   categoryA: string | number;
   categoryB: string | number;
   likes?: [];
-  // TODO: 로그인 기능 합쳐서 수정하기
-  // userId: string;
-  // nickName: string;
+  // FIXME: Type 수정
+  userId: string | undefined;
+  nickName: string | undefined | null;
 }
 
 declare interface isOpenPropsP {

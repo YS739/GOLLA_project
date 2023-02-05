@@ -44,3 +44,9 @@ export const deleteComment = async (id: string) => {
     await deleteDoc(doc(db, 'comments', id));
   }
 };
+
+// Post 등록 하기
+
+export const addPost = async (newPost: postJ) => {
+  await addDoc(collection(db, 'posts'), newPost);
+};

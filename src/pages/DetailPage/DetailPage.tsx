@@ -15,15 +15,10 @@ import { useQuery } from 'react-query';
 import { getCommnets } from '../../common/api';
 
 const DetailPage = () => {
-
-  const { data: comments, isLoading } = useQuery(
-    "comments", getCommnets
-  );
+  const { data: comments, isLoading } = useQuery('comments', getCommnets);
 
   if (isLoading) {
-    return (
-        <div>로딩 중....</div>
-    );
+    return <div>로딩 중....</div>;
   }
 
   // FIXME: GareBar, GetComments에 props 넘길 때 타입 지정 any 말고 수정하기
