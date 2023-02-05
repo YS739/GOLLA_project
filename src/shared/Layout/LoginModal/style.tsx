@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../../../common/color';
 
 export const Btn = styled.button`
   all: unset;
@@ -12,6 +11,10 @@ export const Modal = styled.div`
   text-align: end;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 900px) {
+    width: 500px;
+    height: 300px;
+  }
 `;
 
 export const ModalDiv = styled.div`
@@ -83,12 +86,13 @@ export const InputText = styled.input`
   font-size: 22px;
 `;
 
-export const CompleteBtn = styled.button`
+export const CompleteBtn = styled.button<{ backgroudColor?: string }>`
   margin-top: 30px;
+  margin-left: 5px;
   width: 120px;
   height: 50px;
   font-size: 22px;
-  background-color: ${colors.BLUE};
+  background-color: ${(props) => props.backgroudColor};
   color: white;
   border: none;
   padding: 10;

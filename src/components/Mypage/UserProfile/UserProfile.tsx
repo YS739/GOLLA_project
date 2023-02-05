@@ -1,42 +1,31 @@
 import React from 'react';
 import { colors } from '../../../common/color';
-import {
-  Article,
-  TitleBtn,
-  Title,
-  TitleBox,
-  CardBox,
-  CardDiv,
-  CardName,
-  CardContent,
-  CardBtn,
-} from './style';
+import * as S from './style';
 
 const UserProfile = () => {
   return (
     <>
-      <Article>
-        <TitleBox>
-          <Title>
+      <S.Article>
+        <S.TitleBox>
+          <S.Title>
             <a style={{ color: colors.BLUE }}>심바아빠</a>님의 프로필
-          </Title>
+          </S.Title>
           <div>
-            <TitleBtn>로그아웃</TitleBtn>
-            <TitleBtn style={{ color: 'Red' }}>회원탈퇴</TitleBtn>
+            <S.TitleBtn>회원탈퇴</S.TitleBtn>
           </div>
-        </TitleBox>
-        <CardBox>
-          <CardDiv>
-            <CardName>ID:</CardName>
-            <CardContent>psh5575</CardContent>
-          </CardDiv>
-          <CardDiv>
-            <CardName>닉네임:</CardName>
-            <CardContent>심바아빠</CardContent>
-            <CardBtn>닉네임 변경</CardBtn>
-          </CardDiv>
-        </CardBox>
-      </Article>
+        </S.TitleBox>
+        <S.CardBox>
+          <S.CardDiv>
+            <S.CardName>ID:</S.CardName>
+            <S.CardContent>psh5575</S.CardContent>
+          </S.CardDiv>
+          <S.CardDiv>
+            <S.CardName>닉네임:</S.CardName>
+            <S.CardContent>심바아빠</S.CardContent>
+            <S.CardBtn>닉네임 변경</S.CardBtn>
+          </S.CardDiv>
+        </S.CardBox>
+      </S.Article>
     </>
   );
 };
