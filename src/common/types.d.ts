@@ -8,3 +8,4 @@ declare interface isOpenPropsP {
 declare interface PropsP {
   style: ReactNode;
 }
+
